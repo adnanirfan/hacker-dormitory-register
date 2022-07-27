@@ -20,15 +20,11 @@ function Search({ setError, addToResidentsList }) {
   });
 
   const onChange = (key, value) => {
-    console.log(key, ":", value, { [key]: value, ...form });
     setForm({ ...form, [key]: value });
   };
 
   const onAdd = () => {
-    // STUDENTS.find();
-    console.log(STUDENTS);
     const student = STUDENTS.find((v) => {
-      console.log(form.studentName.toLowerCase(), v.name.toLowerCase());
       return form.studentName.toLowerCase() === v.name.toLowerCase();
     });
 
@@ -49,8 +45,6 @@ function Search({ setError, addToResidentsList }) {
       setError(`Sorry, ${student.name}'s validity has Expired!`);
     }
   };
-
-  console.log(form);
 
   return (
     <div className="my-50 layout-row align-items-end justify-content-end">
